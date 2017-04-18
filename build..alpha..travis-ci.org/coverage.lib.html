@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-browserify-shim/browserify-shim/lib/parse-inline-shims.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-browserify-shim/node_modules/browserify-shim/lib/parse-inline-shims.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-browserify-shim">npmtest-browserify-shim (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-browserify-shim/browserify-shim/lib/parse-inline-shims.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-browserify-shim/node_modules/browserify-shim/lib/parse-inline-shims.js</span></h1>
     <h2>
         
         Statements: <span class="metric">10% <small>(2 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-browserify-shim/browserify-shim/lib/</a> » parse-inline-shims.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-browserify-shim/node_modules/browserify-shim/lib/</a> &#187; parse-inline-shims.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -360,28 +362,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 &nbsp;
-<span class="fstat-no" title="function not covered">function parseDepends(deps) {</span>
-<span class="cstat-no" title="statement not covered">  if (!deps) <span class="cstat-no" title="statement not covered">return undefined;</span></span>
+<span class="fstat-no" title="function not covered" >function parseDepends(deps) {</span>
+<span class="cstat-no" title="statement not covered" >  if (!deps) <span class="cstat-no" title="statement not covered" >return undefined;</span></span>
   // allow depends: [ '..' ] and depends: '..'
-<span class="cstat-no" title="statement not covered">  deps = Array.isArray(deps) ? deps : [ deps ];</span>
+<span class="cstat-no" title="statement not covered" >  deps = Array.isArray(deps) ? deps : [ deps ];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return deps</span>
-    .reduce(<span class="fstat-no" title="function not covered">function (acc, d) {</span>
-<span class="cstat-no" title="statement not covered">      var parts = d.split(':');</span>
-<span class="cstat-no" title="statement not covered">      if (!parts </span>
+<span class="cstat-no" title="statement not covered" >  return deps</span>
+    .reduce(<span class="fstat-no" title="function not covered" >function (acc, d) {</span>
+<span class="cstat-no" title="statement not covered" >      var parts = d.split(':');</span>
+<span class="cstat-no" title="statement not covered" >      if (!parts </span>
           || parts.length &gt; 2 
           || parts.length &lt; 1
           || !parts[0]) 
-<span class="cstat-no" title="statement not covered">        throw new Error('Invalid depends specification: "' + d + '". Needs to have format: "nameORpath:export"');</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error('Invalid depends specification: "' + d + '". Needs to have format: "nameORpath:export"');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      parts = parts.map(<span class="fstat-no" title="function not covered">function (p) { </span></span>
-<span class="cstat-no" title="statement not covered">        return typeof p === 'string' ? p.trim() : p </span>
+<span class="cstat-no" title="statement not covered" >      parts = parts.map(<span class="fstat-no" title="function not covered" >function (p) { </span></span>
+<span class="cstat-no" title="statement not covered" >        return typeof p === 'string' ? p.trim() : p </span>
       });
         
       // if parts[1] is not defined that means that we depend on module named in parts[0]
       // but we don't need it to be attached to the window under a certain name
-<span class="cstat-no" title="statement not covered">      acc[parts[0]] = parts[1] || null;</span>
-<span class="cstat-no" title="statement not covered">      return acc;</span>
+<span class="cstat-no" title="statement not covered" >      acc[parts[0]] = parts[1] || null;</span>
+<span class="cstat-no" title="statement not covered" >      return acc;</span>
     }, {});
 }
 &nbsp;
@@ -409,34 +411,33 @@
  * @param {Object} config inlined shims config
  * @return {Object} parsed config
  */
-var go = module.exports = <span class="fstat-no" title="function not covered">function (config) {</span>
+var go = module.exports = <span class="fstat-no" title="function not covered" >function (config) {</span>
   // all errors thrown are caught inside resolve-shims and passed back to browserify-shim
-<span class="cstat-no" title="statement not covered">  return Object.keys(config)</span>
-    .reduce(<span class="fstat-no" title="function not covered">function (acc, field) {</span>
-<span class="cstat-no" title="statement not covered">      var conf = config[field];</span>
+<span class="cstat-no" title="statement not covered" >  return Object.keys(config)</span>
+    .reduce(<span class="fstat-no" title="function not covered" >function (acc, field) {</span>
+<span class="cstat-no" title="statement not covered" >      var conf = config[field];</span>
       
       // normalize two possible formats:
       //    "key": "export,
       //    "key": { "exports": "export" .. }
-<span class="cstat-no" title="statement not covered">      if (typeof conf === 'string') <span class="cstat-no" title="statement not covered">conf = { exports: conf };</span></span>
+<span class="cstat-no" title="statement not covered" >      if (typeof conf === 'string') <span class="cstat-no" title="statement not covered" >conf = { exports: conf };</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      var exps = conf.exports &amp;&amp; conf.exports.length ? conf.exports.trim() : null;</span>
+<span class="cstat-no" title="statement not covered" >      var exps = conf.exports &amp;&amp; conf.exports.length ? conf.exports.trim() : null;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      acc[field.trim()] = {</span>
+<span class="cstat-no" title="statement not covered" >      acc[field.trim()] = {</span>
           exports: exps 
         , depends: parseDepends(conf.depends)
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      return acc;</span>
+<span class="cstat-no" title="statement not covered" >      return acc;</span>
     }, {});
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 17:22:58 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 17:11:29 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
