@@ -1,6 +1,6 @@
 # npmtest-browserify-shim
 
-#### test coverage for  [browserify-shim (v3.8.14)](https://github.com/thlorenz/browserify-shim#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-browserify-shim.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-browserify-shim) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-browserify-shim.svg)](https://travis-ci.org/npmtest/node-npmtest-browserify-shim)
+#### basic test coverage for  [browserify-shim (v3.8.14)](https://github.com/thlorenz/browserify-shim#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-browserify-shim.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-browserify-shim) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-browserify-shim.svg)](https://travis-ci.org/npmtest/node-npmtest-browserify-shim)
 
 #### Makes CommonJS-incompatible modules browserifyable.
 
@@ -10,7 +10,7 @@
 |--:|:--|
 | coverage : | [![istanbul-coverage](https://npmtest.github.io/node-npmtest-browserify-shim/build/coverage.badge.svg)](https://npmtest.github.io/node-npmtest-browserify-shim/build/coverage.html/index.html)|
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-browserify-shim/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-browserify-shim/build/test-report.html)|
-| build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-browserify-shim/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-browserify-shim/tree/gh-pages/build)|
+| test-server-github : | [![github.com test-server](https://npmtest.github.io/node-npmtest-browserify-shim/GitHub-Mark-32px.png)](https://npmtest.github.io/node-npmtest-browserify-shim/build/app/index.html) | | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-browserify-shim/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-browserify-shim/tree/gh-pages/build)|
 
 - [https://npmtest.github.io/node-npmtest-browserify-shim/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-browserify-shim/build/coverage.html/index.html)
 
@@ -106,7 +106,8 @@
         "test": "test-peer-range browserify",
         "test-main": "tap test/*.js && tap test/shim/*.js"
     },
-    "version": "3.8.14"
+    "version": "3.8.14",
+    "bin": {}
 }
 ```
 
